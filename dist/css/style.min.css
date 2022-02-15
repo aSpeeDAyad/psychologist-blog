@@ -80,6 +80,14 @@ html {
   height: 100%;
 }
 
+body {
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 *,
 *::before,
 *::after {
@@ -111,6 +119,8 @@ ul, li {
 .header__content {
   display: flex;
   justify-content: space-between;
+  align-items: center !important;
+  min-height: 88px;
 }
 .header__menu-list {
   display: flex;
@@ -119,4 +129,25 @@ ul, li {
 }
 .header__menu-list li + li {
   margin-left: 157px;
+}
+.header__menu-item {
+  margin-top: 3px;
+}
+.header__menu-item a {
+  font-family: Roboto;
+  font-weight: 500;
+}
+.header__socials-list {
+  display: flex;
+  justify-content: space-between;
+}
+.header__socials-list li + li {
+  margin-left: 40px;
+}
+.header__socials-list-item {
+  border: 1px solid #EEB7A2;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
 }

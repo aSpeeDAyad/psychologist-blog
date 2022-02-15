@@ -1,39 +1,65 @@
 @import "fonts";
-@import 'vars.scss'; 
-@import 'global.scss'; 
+@import 'vars.scss';
+@import 'global.scss';
+
+//start header
 
 
 .header {
-background-color: #344555;
-min-height: 88px;
+	background-color: #344555;
+	min-height: 88px;
+
 	&__content {
 		display: flex;
 		justify-content: space-between;
+		align-items: center !important;
+		min-height: 88px;
+
 	}
 
-	&__menu {
-	}
+	&__menu {}
 
 	&__menu-list {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: row;
-		li+li{
+
+
+		li+li {
 			margin-left: 157px;
 		}
 	}
 
 	&__menu-item {
-		
-	}
-	&__socials {
+
+		margin-top: 3px;
+
+		a {
+			font-family: Roboto;
+			font-weight: 500;
+		}
 	}
 
+	&__socials {}
+
 	&__socials-list {
+		display: flex;
+		justify-content: space-between;
+		li+li {
+			margin-left: 40px;
+		}
+
+
 	}
 
 	&__socials-list-item {
+		border: 1px solid #EEB7A2;
+		width: 40px;
+		height: 40px;
+		background-color: #fff;
+		border-radius: 50%;
 	}
 }
+//finish header
 
-
+//start first Window
