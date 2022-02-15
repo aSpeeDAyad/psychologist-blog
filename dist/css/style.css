@@ -135,7 +135,7 @@ ul, li {
 }
 .header__menu-item a {
   font-family: Roboto;
-  font-weight: 500;
+  font-weight: 300;
 }
 .header__socials-list {
   display: flex;
@@ -150,4 +150,57 @@ ul, li {
   height: 40px;
   background-color: #fff;
   border-radius: 50%;
+}
+
+.mainInformation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.mainInformation-wrapper {
+  max-width: 600px;
+}
+
+.mainInformation-title {
+  font-family: OpenSans;
+  font-weight: 400;
+  font-size: 26px;
+  color: #536879;
+}
+
+.mainInformation-name {
+  font-family: PlayfairDisplay;
+  font-weight: 400;
+  font-size: 64px;
+  color: #435462;
+}
+
+.mainInformation-experience {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 23px;
+  color: #726D6D;
+}
+.mainInformation-experience span {
+  font-family: PlayfairDisplay;
+  font-weight: 500;
+  font-size: 23px;
+  color: #435462;
+}
+
+.emainInformation-quote {
+  font-family: PlayfairDisplay;
+  font-weight: 500;
+  font-size: 23px;
+  color: #435462;
+}
+
+.emainInformation-author {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 500;
+  margin-left: auto;
+  color: #435462;
+  text-align: end;
 }
