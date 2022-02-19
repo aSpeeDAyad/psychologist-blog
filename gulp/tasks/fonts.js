@@ -5,12 +5,12 @@ import ttf2woff2 from 'gulp-ttf2woff2';
 export const otfToTtf = () => {
     //Ищем файлы шрифтов otf 
     return app.gulp.src(`${app.path.srcFolder}/fonts/*.otf`, {})
-        .pipe(app.plugins.plumber(
-            app.plugins.notify.onError({
-                title:"FONTS",
-                message: "Error: <%= error.message %>"
-            }))
-        )
+        // .pipe(app.plugins.plumber(
+        //     app.plugins.notify.onError({
+        //         title:"FONTS",
+        //         message: "Error: <%= error.message %>"
+        //     }))
+        // )
         //Ковеpтируем в .ttf
         .pipe(fonter({
             formats: ['ttf']
@@ -23,12 +23,12 @@ export const otfToTtf = () => {
 export const ttfToWoff = () =>{
     //Ищем файлы шрифтов .ttf
     return app.gulp.src(`${app.path.srcFolder}/fonts/*.tff`, {})
-        .pipe(app.plugins.plumber(
-            app.plugins.notify.onError({
-                title:"FONTS",
-                message: "Error: <%= error.message %>"
-            }))
-        )
+        // .pipe(app.plugins.plumber(
+        //     app.plugins.notify.onError({
+        //         title:"FONTS",
+        //         message: "Error: <%= error.message %>"
+        //     }))
+        // )
         //Ковеpтируем в .woff
         .pipe(fonter({
             formats: ['woff']
