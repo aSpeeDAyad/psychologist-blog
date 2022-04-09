@@ -441,6 +441,7 @@
 		margin-right: 20px;
 		width: 365px;
 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+		z-index: 100;
 	}
 
 	&__item-preview {
@@ -494,5 +495,56 @@
 		position: absolute;
 		bottom: 24px;
 	}
+	
 
+}
+//pagination
+.articals {
+
+	&__pagination {
+		margin: 0 auto;
+		display: flex;
+		margin-top: 50px;
+		margin-bottom: 110px;
+		cursor: pointer;
+	}
+}
+.prev {
+	background-image:url(../img/ArrowPrev.png);
+	width: 61px;
+	height: 21px;
+	margin-right: 50px;
+	&:first-child{
+		margin-left: -25px;	
+	}
+	margin-top: 7px;
+}
+.numbersPage {
+	width: 37px;
+	height: 37px;
+	border-radius:50%;
+	background-color: transparent;
+	padding-left: 12px;
+    padding-top: 6px;
+	
+	color:#8198AE;
+}
+.numbersPage-active {
+	background-color: #344555;
+	color:#fff;
+}
+.next {
+	background-image:url(../img/ArrowNext.png);
+	width: 61px;
+	height: 21px;
+	margin-left: 50px;
+	margin-top: 7px;
+}
+.lighthouse{
+	background-image: url(../img/lighthouse.png);
+	width: 728px;
+	height: 721px;
+	position: absolute;
+	left: 80px;
+	bottom: 110px;
 }
