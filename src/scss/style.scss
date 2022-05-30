@@ -39,33 +39,22 @@
 	}
 
 	&__menu-item {
-		transition: all 0.5s ease-out;
-		&-line1 {
-			
-		}
-
 
 		&:hover {
 			
 			a{
-				transition: all 0.5s ease-out;
 				
 				&:before {
-					content: "";
-					background-color: yellow;
-					position:absolute;
-					width:50%;
-					height: 1px;
-					
+					transform: translate(-50%);
+					padding-left: 100%;
+					left:50%;
+
 				}
-				&:after {
-					content: "";
-					background-color: #fff;
-					position:absolute;
-					width:50%;
-					height: 1px;
-					margin-left: -50%;
-				}
+				// &:after {
+				// 	padding-right: 100%;
+				// 	transform: translate(-50%);
+
+				// }
 			}
 		}
 
@@ -73,21 +62,27 @@
 
 		a {
 			&:before {
+				transition: all 0.2s;
+				transform: translate(0%);
 				content: "";
 				background-color: yellow;
 				position:absolute;
-				width:0%;
 				height: 1px;
-				
-			}
-			&:after {
-				content: "";
-				background-color: #fff;
-				position:absolute;
-				width:0%;
-				height: 1px;
-				margin-left: -50%;
-			}
+				padding-left: 0%;
+				left: 0%;
+			}			
+			// &:after {
+			// 	transform: translate(0%);
+
+			// 	transition: all 0.5s;
+			// 	content: "";
+			// 	background-color: #fff;
+			// 	position:absolute;
+			// 	width:0%;
+			// 	height: 1px;
+			// 	padding-right:0%;
+			// 	margin-right: -50%;
+			// }
 			
 			color: red;
 			// position: relative;
