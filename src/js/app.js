@@ -2,7 +2,7 @@ import * as flsFunctions from "./modules/functions.js";
 
 flsFunctions.isWebp();
 
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
 const swiper = new Swiper('.swiper', {
 	autoplay: {
 		delay: 2000,
