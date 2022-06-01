@@ -1,5 +1,12 @@
 @charset "UTF-8";
 @font-face {
+  font-family: Caladea;
+  font-display: swap;
+  src: url("../fonts/Caladea-Regular.woff2") format("woff2"), url("../fonts/Caladea-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: OpenSans;
   font-display: swap;
   src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
@@ -30,13 +37,6 @@
 @font-face {
   font-family: PlayfairDisplay;
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: PlayfairDisplay;
-  font-display: swap;
   src: url("../fonts/PlayfairDisplay-SemiBold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
@@ -51,15 +51,15 @@
 @font-face {
   font-family: Roboto;
   font-display: swap;
-  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: Roboto;
+  font-family: PlayfairDisplay;
   font-display: swap;
-  src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -67,6 +67,13 @@
   font-display: swap;
   src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
@@ -152,6 +159,9 @@ ul, li {
   justify-content: space-between;
   flex-direction: row;
 }
+.header__menu-list-footer {
+  margin-left: 400px;
+}
 .header__menu-list:first-child {
   margin-left: 10px;
 }
@@ -163,24 +173,28 @@ ul, li {
 }
 .header__menu-item:hover a:before {
   transform: translate(-50%);
-  padding-left: 100%;
-  left: 50%;
+  width: 100%;
 }
 .header__menu-item a {
-  color: red;
+  z-index: 100;
   font-family: Roboto;
   font-weight: 300;
   position: relative;
+  transition: all 0.5s;
 }
 .header__menu-item a:before {
-  transition: all 0.2s;
+  transition: all 0.3s;
   transform: translate(0%);
   content: "";
   background-color: yellow;
   position: absolute;
   height: 1px;
-  padding-left: 0%;
-  left: 0%;
+  width: 0%;
+  left: 50%;
+  bottom: 0px;
+}
+.header__menu-item a:hover {
+  color: #EEB7A2;
 }
 .header__socials-list {
   display: flex;
@@ -190,11 +204,31 @@ ul, li {
   margin-left: 40px;
 }
 .header__socials-list-item {
-  border: 1px solid #EEB7A2;
+  transition: all 0.5s;
   width: 40px;
   height: 40px;
   background-color: #fff;
   border-radius: 50%;
+  box-shadow: inset 0px 2px 4px #2F3B45;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+}
+.header__socials-list-item:hover {
+  background-color: #EEB7A2;
+}
+.header__socials-list-item:hover a, .header__socials-list-item:hover #facebook {
+  color: #fff;
+}
+.header__socials-list-item a {
+  color: #344555;
+  padding-left: 10px;
+  padding-top: 7px;
+  font-weight: 700;
+}
+.header__socials-list-item #facebook {
+  padding-left: 17px;
+  padding-top: 9px;
+  color: #344555;
 }
 
 .mainInformation {
@@ -288,6 +322,7 @@ ul, li {
   font-weight: 700;
   padding-top: 2px;
   position: relative;
+  transition: all 2s;
 }
 .mainInformation-aboutMe::before {
   content: "";
@@ -361,10 +396,17 @@ ul, li {
 
 .bird1 {
   position: absolute;
+  z-index: 100;
+  left: -310px;
+  top: 128px;
 }
 
 .bird2 {
   position: absolute;
+  z-index: 100;
+  left: -337px;
+  top: 118px;
+  height: 90px;
 }
 
 .sliderBlock {
@@ -516,6 +558,7 @@ ul, li {
   width: 365px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 19px;
+  z-index: 100;
 }
 .articals__item:hover {
   transition: all 0.3s;
@@ -571,6 +614,7 @@ ul, li {
   font-size: 18px;
   margin-left: 22x;
   margin-bottom: 30px;
+  transition: all 1s;
 }
 .articals__item-btn:hover {
   border: solid #EEB7A2 0px;
@@ -616,35 +660,62 @@ ul, li {
 .prev {
   background-image: url(../img/ArrowPrev.png);
   width: 61px;
-  height: 21px;
+  height: 25px;
   margin-right: 50px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
   margin-top: 7px;
 }
 .prev:first-child {
   margin-left: -25px;
 }
+.prev:hover {
+  width: 64px;
+  margin-right: 47px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
 
 .numbersPage {
   width: 37px;
-  height: 37px;
+  height: 38px;
   border-radius: 50%;
   background-color: transparent;
   padding-left: 12px;
-  padding-top: 6px;
+  padding-top: 5px;
+  font-family: Caladea;
+  font-weight: 400;
+  font-size: 24px;
   color: #8198AE;
+  cursor: pointer;
+}
+.numbersPage:hover {
+  box-shadow: inset 0px 2px 4px #2F3B45;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .numbersPage-active {
   background-color: #344555;
   color: #fff;
+  padding-left: 14px;
+  box-shadow: inset 0px 2px 4px #2F3B45;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .next {
   background-image: url(../img/ArrowNext.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 61px;
-  height: 21px;
+  height: 25px;
   margin-left: 50px;
   margin-top: 7px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.next:hover {
+  width: 62px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+  margin-left: 49px;
 }
 
 .lighthouse {
@@ -658,6 +729,7 @@ ul, li {
 
 .foto .outside-container {
   position: relative;
+  background-color: #FFEFE1;
 }
 
 .wave-blue {
@@ -676,7 +748,7 @@ ul, li {
 
 .foto-inner {
   min-height: 500px;
-  background-color: #344555;
+  background-color: #2b404f;
   margin-top: -5px;
 }
 

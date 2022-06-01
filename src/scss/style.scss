@@ -26,6 +26,9 @@
 		display: flex;
 		justify-content: space-between;
 		flex-direction: row;
+		&-footer{
+			margin-left: 400px;
+		}
 
 		&:first-child {
 			margin-left: 10px;
@@ -39,15 +42,13 @@
 	}
 
 	&__menu-item {
-
 		&:hover {
 			
 			a{
 				
 				&:before {
 					transform: translate(-50%);
-					padding-left: 100%;
-					left:50%;
+					width: 100%;
 
 				}
 				// &:after {
@@ -61,42 +62,25 @@
 		margin-top: 3px;
 
 		a {
+			z-index: 100;
 			&:before {
-				transition: all 0.2s;
+				transition: all 0.3s;
 				transform: translate(0%);
 				content: "";
 				background-color: yellow;
 				position:absolute;
 				height: 1px;
-				padding-left: 0%;
-				left: 0%;
+				width: 0%;
+				left: 50%;
+				bottom:0px;
 			}			
-			// &:after {
-			// 	transform: translate(0%);
-
-			// 	transition: all 0.5s;
-			// 	content: "";
-			// 	background-color: #fff;
-			// 	position:absolute;
-			// 	width:0%;
-			// 	height: 1px;
-			// 	padding-right:0%;
-			// 	margin-right: -50%;
-			// }
-			
-			color: red;
-			// position: relative;
 			font-family: Roboto;
 			font-weight: 300;
 			position: relative;
-
-			
-
-			// &::before{
-			// 	
-			// 	position: absolute;
-			// 	top: 10px;
-			// }
+			transition: all 0.5s;
+			&:hover{
+				color:#EEB7A2;
+			}
 		}
 
 	}
@@ -110,16 +94,38 @@
 		li+li {
 			margin-left: 40px;
 		}
-
-
 	}
 
 	&__socials-list-item {
-		border: 1px solid #EEB7A2;
+		transition: all 0.5s;
 		width: 40px;
 		height: 40px;
 		background-color: #fff;
 		border-radius: 50%;
+		box-shadow: inset 0px 2px 4px #2F3B45;
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+		cursor: pointer;
+		&:hover{
+			background-color: #EEB7A2;
+			a,#facebook{
+				color:#fff;
+			}
+		}
+
+		a{
+			color:$grey;
+			padding-left: 10px;
+    		padding-top: 7px;
+			font-weight: 700;
+			&:hover{
+			}
+		}
+		#facebook{
+			padding-left: 17px;
+			padding-top: 9px;
+			color:$grey;
+			
+		}
 	}
 }
 
@@ -220,7 +226,7 @@
 	font-weight: 700;
 	padding-top: 2px;
 	position: relative;
-
+	transition: all 2s;
 	&::before {
 		content: '';
 		background-image: url(../img/bird.png);
@@ -322,10 +328,17 @@
 
 .bird1 {
 	position: absolute;
+    z-index: 100;
+    left: -310px;
+    top: 128px;
 }
 
 .bird2 {
 	position: absolute;
+    z-index: 100;
+    left: -337px;
+    top: 118px;
+    height: 90px;
 }
 
 .sliderBlock {
@@ -533,7 +546,7 @@
 		width: 365px;
 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 		border-radius: 19px;
-
+		z-index: 100;
 		&:hover {
 			transition: all 0.3s;
 			box-shadow: 0px 4px 9px rgba(67, 84, 98, 0.66);
@@ -599,7 +612,7 @@
 		font-size: 18px;
 		margin-left: 22x;
 		margin-bottom: 30px;
-
+		transition: all 1s;
 		&:hover {
 			border: solid #EEB7A2 0px;
 			padding-top: 7px;
@@ -658,44 +671,68 @@
 		margin-top: 50px;
 		margin-bottom: 110px;
 		cursor: pointer;
+		
 	}
 }
 
 .prev {
 	background-image: url(../img/ArrowPrev.png);
 	width: 61px;
-	height: 21px;
+	height: 25px;
 	margin-right: 50px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	cursor: pointer;
+	margin-top: 7px;
 
 	&:first-child {
 		margin-left: -25px;
 	}
-
-	margin-top: 7px;
+	&:hover{
+		width: 64px;
+		margin-right: 47px;
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+	}
 }
 
 .numbersPage {
 	width: 37px;
-	height: 37px;
+	height: 38px;
 	border-radius: 50%;
 	background-color: transparent;
 	padding-left: 12px;
-	padding-top: 6px;
-
+	padding-top: 5px;
+	font-family: Caladea;
+	font-weight: 400;
+	font-size: 24px;
 	color: #8198AE;
+	cursor: pointer;
+	&:hover{
+		box-shadow: inset 0px 2px 4px #2F3B45;
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	}
 }
 
 .numbersPage-active {
 	background-color: $grey;
 	color: #fff;
+	padding-left: 14px;
+	box-shadow: inset 0px 2px 4px #2F3B45;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .next {
 	background-image: url(../img/ArrowNext.png);
+	@include bgi;
 	width: 61px;
-	height: 21px;
+	height: 25px;
 	margin-left: 50px;
 	margin-top: 7px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	&:hover{
+		width: 62px;
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+		margin-left: 49px;
+	}
 }
 
 .lighthouse {
@@ -714,7 +751,7 @@
 
 	.outside-container {
 		position: relative;
-
+		background-color: #FFEFE1;
 	}
 
 
@@ -737,7 +774,7 @@
 
 .foto-inner {
 	min-height: 500px;
-	background-color: $grey;
+	background-color: #2b404f;
 	margin-top: -5px;
 }
 
